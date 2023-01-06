@@ -3,8 +3,6 @@
 //Description: game of balzz with struct, enums,delgates,modless dialog,modal dialog and multithreading 
 //Date: 10/11/2022
 //Author: Sharry Singh
-//Course: CMPE1666
-//Class: CNT.A01(fall 2022)
 //***********************************************************************************
 using System;
 using System.Collections.Generic;
