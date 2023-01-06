@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="refresh" content="3"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Weather App</title>
+   
+</head>
+<style>
+    body {
+    background-color: #55efc4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #55efc4;
+}
+
+#main-content {
+    background-color: #81ecec;
+    height: 40vh;
+    width: 40vh;
+    /* box-shadow: 2px 2px 2px 4px rgb(74, 73, 73); */
+    box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+
+}
+
+#weathercondition {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes rotates {
+
+    from {
+        transform: translateX(-0.5rem);
+    }
+
+    to {
+        transfor: translateX(0.5rem);
+    }
+}
+
+.fa-street-view {
+    animation: rotates 3s linear infinite alternate;
+}
+
+.fa-cloud{
+    animation: sun 3s linear infinite alternate;  
+}
+.fa-sun{
+    animation: sun 3s linear infinite alternate;  
+}
+
+
+@keyframes sun {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+#weathercondition
+{
+    margin-top: 12px;
+}
+#info
+{
+    margin-top: 50px;
+}
+</style>
+<body>
+    <div id="main-content"> 
+        <div id="weathercondition">
+            <i class="fas fa-sun" style="color:#eccc68; height: 40px;"></i>
+        </div>
+        <div id="info">
+            <h1 class="location" style="font-weight: 60;"><i class="fas fa-street-view"></i>{%city%}, {%country%}</h1>
+            <aside class="dateandtime">WED | DEC 28 | 01:46AM</aside>
+            <h1 class="current_temp">{%tempval%}°C </h1>
+            <h4 class="temphigh_low">HIGH: {%tempmin%}°C | LOW: {%tempmax%}°C</h4>
+        </div>
+    </div>
+    
+ 
+
+</body>
+<script>
+    function TodayTimeandDate() {
+    //my Array for days of week
+    let weekday = ["SUN", "MON", "TUE", "WED", "THUR", "FRI", "SAT"];
+    let month = ["JAN", "FEB", "MAR", "APR", "MAY", "JUNE", "JULY", "AUG", "SEP", "OCT", "NOV", "DEC"];
+
+    //creating date object
+    const date = new Date();
+
+    let currentDay = weekday[date.getDay()];
+    let currentMonth = month[date.getMonth()];
+    let currentDate = date.getDate();
+    let currentHour = date.getHours();
+    let currentMinute = date.getMinutes();
+
+    let period = "AM"
+    if (currentHour > 11) {
+        period = "PM"
+        if (currentHour > 12)
+            currentHour -= 12;
+        currentHour = "0" + currentHour;
+    }
+    if (currentMinute < 10) {
+        currentMinute = "0" + currentMinute;
+    }
+
+    let currentTime = `${currentHour}:${currentMinute}${period}`;
+
+    return `${currentDay} | ${currentMonth} ${currentDate} | ${currentTime}`;
+
+    // console.log(currentDay);
+    // console.log(currentMonth);
+    // console.log(currentDate);
+    // console.log(currentTime);
+}
+
+//onload event
+$(() => {
+    $(".dateandtime").html(TodayTimeandDate());
+
+    const tempStatuts="{%tempstats%u}";
+    if(tempStatuts=="sunny")
+    {
+        $("#weathercondition").html('<i class="fas fa-sun" style="color:#eccc68; height: 40px;margin: auto;"></i>');
+    }
+    if(tempStatuts=="clouds")
+    {
+        $("#weathercondition").html('<i class="fas fa-cloud" style="color:#dcdde1; height: 40px;margin: auto;"></i>');
+    }
+    if(tempStatuts=="Rainy")
+    {
+        $("#weathercondition").html('<i class="fas fa-cloud-rain" style="color:#a4b0be; height: 40px;margin: auto;"></i>');
+    }else
+    {
+        $("#weathercondition").html('<i class="fas fa-cloud" style="color:#658080; height: 40px;margin: auto;"></i>');
+    }
+
+})
+</script>
+</html>

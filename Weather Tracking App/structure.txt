@@ -1,0 +1,42 @@
+[
+  {
+    coord: { lon: -113.4687, lat: 53.5501 },
+    weather: [ [Object] ],
+    base: 'stations',
+    main: {
+      temp: 266.09,
+      feels_like: 261.07,
+      temp_min: 259.56,
+      temp_max: 268.8,
+      pressure: 1004,
+      humidity: 96
+    },
+    visibility: 10000,
+    wind: { speed: 3.09, deg: 190 },
+    clouds: { all: 51 },
+    dt: 1672367092,
+    sys: {
+      type: 1,
+      id: 642,
+      country: 'CA',
+      sunrise: 1672329027,
+      sunset: 1672356074
+    },
+    timezone: -25200,
+    id: 5946768,
+    name: 'Edmonton',
+    cod: 200
+  }
+]
+end
+      id: 642,
+      country: 'CA',
+      sunrise: 1672329027,
+      sunset: 1672356074
+    },
+    timezone: -25200,
+    id: 5946768,
+    name: 'Edmonton',
+    cod: 200
+  }
+]
