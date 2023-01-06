@@ -1,3 +1,6 @@
+//Author : Sharry Singh
+//Email: Singh21Sharry@gmail.com
+
 const http = require('http');
 const fs = require('fs');
 const requests = require('requests');
