@@ -1,0 +1,97 @@
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////Author: Sharry Singh///////////////////////////////////////////////////////////////
+/////////////////////////////Email: Singh21Sharry@gmail.com////////////////////////////////////////////////////// */
+html,
+body {
+  background-color: #cdb4db;
+  margin: auto;
+}
+
+.heading {
+  background-color: #ffc8dd;
+  margin: auto;
+  font-size: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: whitesmoke;
+  text-shadow: 2px 4px 4px black;
+}
+
+.input-content {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  background-color: #961edc;
+  height: 200px;
+}
+
+.input-items {
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 30px;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.task {
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 40px;
+
+}
+
+.task-status {
+  text-align: center;
+  font-size: 30px;
+}
+
+.total-task {
+  border: red solid 4px;
+}
+
+.completed-task {
+  border: greenyellow solid 4px;
+}
+
+.list-content {
+  text-align: center;
+}
+
+.list-content {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 2%;
+  border: black 4px solid;
+
+}
+
+.task_content>h1 {
+  border: black 2px solid;
+  opacity: 0.7;
+
+}
+
+.task_content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-column-gap: 10px;
+}
+
+.task_content>button {
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+
+}
+
+.task_content>button:hover{
+  background-color: #9a8c98;
+}
