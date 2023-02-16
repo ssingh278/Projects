@@ -65,7 +65,7 @@ function switchTurn()
         //first check if game already finished but user keep trying to click on the boxes
         if (CheckWin()) {
             $data = new stdClass();
-            $data->message = "Game Already Finished";
+            $data->message = "Game Already Finished. " .$_SESSION['winner'] . " wins at " . $_SESSION['line'];
             $myOBJ = json_encode($data);
             echo $myOBJ;
             die();
@@ -74,7 +74,9 @@ function switchTurn()
         else {
             //check for if the location has been already filled by either X or O
             if ($_SESSION['game'][$locX][$locY] == '1' || $_SESSION['game'][$locX][$locY] == '2') {
+                $_SESSION['count']=$_POST['click'];
                 $data = new stdClass();
+                $data->trueCount = $_SESSION['count']-1;
                 $data->error = "Position Already Marked Select Other.";
                 $myOBJ = json_encode($data);
                 echo $myOBJ;
@@ -150,9 +152,9 @@ function CheckWin()
                 $_SESSION['line'] = "Bottom Line";
             }
 
-            if ($board[0][0] == "1") {
+            if ($board[$i][0] == "1" &&$board[$i][1]="1" &&$board[$i][2]="1") {
                 $_SESSION['winner'] = $_SESSION['p1name'];
-            } else {
+            } else if ($board[$i][0] == "2" &&$board[$i][1]="2" &&$board[$i][2]="2"){
                 $_SESSION['winner'] = $_SESSION['p2name'];
             }
             return true;
@@ -173,9 +175,9 @@ function CheckWin()
             }
 
 
-            if ($board[0][0] == "1") {
+            if ($board[0][$i] == "1" && $board[1][$i] == "1" &&$board[2][$i] == "1") {
                 $_SESSION['winner'] = $_SESSION['p1name'];
-            } else {
+            } else  if ($board[0][$i] == "2" && $board[1][$i] == "2" &&$board[2][$i] == "2"){
                 $_SESSION['winner'] = $_SESSION['p2name'];
             }
             return true;

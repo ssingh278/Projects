@@ -70,15 +70,15 @@ if (isset($_GET['exit']) ) {
         <hr>
         <div id="board-div">
             <div id="board">
-                <input type="text" name="" id="1" locX="0" locY="0" readonly="readonly">
-                <input type="text" name="" id="2" locX="0" locY="1" readonly="readonly">
-                <input type="text" name="" id="3" locX="0" locY="2" readonly="readonly">
-                <input type="text" name="" id="4" locX="1" locY="0" readonly="readonly">
-                <input type="text" name="" id="5" locX="1" locY="1" readonly="readonly">
-                <input type="text" name="" id="6" locX="1" locY="2" readonly="readonly">
-                <input type="text" name="" id="7" locX="2" locY="0" readonly="readonly">
-                <input type="text" name="" id="7" locX="2" locY="1" readonly="readonly">
-                <input type="text" name="" id="9" locX="2" locY="2" readonly="readonly">
+                <input type="text"  id="1" locX="0" locY="0" readonly="readonly">
+                <input type="text"  id="2" locX="0" locY="1" readonly="readonly">
+                <input type="text" id="3" locX="0" locY="2" readonly="readonly">
+                <input type="text"  id="4" locX="1" locY="0" readonly="readonly">
+                <input type="text"  id="5" locX="1" locY="1" readonly="readonly">
+                <input type="text"  id="6" locX="1" locY="2" readonly="readonly">
+                <input type="text"  id="7" locX="2" locY="0" readonly="readonly">
+                <input type="text"  id="7" locX="2" locY="1" readonly="readonly">
+                <input type="text"  id="9" locX="2" locY="2" readonly="readonly">
 
             </div>
         </div>

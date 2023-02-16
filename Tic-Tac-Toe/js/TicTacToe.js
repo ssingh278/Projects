@@ -1,5 +1,6 @@
 let count = 0;
 $(document).ready(() => {
+    $("#board-div").hide();
     let playe1name = $("#player1-tbx").val();
     if (playe1name.length > 0) {
         PreStuff();
@@ -70,6 +71,8 @@ function CallAJAX(url, postData, type, dataType, fxnSuccess, fxnError) {
  * @return nothing 
  */
 function ShowStatus(data, response) {
+    $("#board-div").show();
+
     console.log(data);
     let playe1name = $("#player1-tbx").val();
     let playe2name = $("#player2-tbx").val();
@@ -114,8 +117,9 @@ function markLocation(data, response) {
             $(item).val(data['symbol']);
             $("#error").hide();
         }
-        if (data['error']) {
+        if (data['error']&&data['trueCount']) {
             $("#error").show();
+            count=data['trueCount'];
             $("#error").html(data['error']);
         }
     });
